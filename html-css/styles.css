@@ -1,0 +1,144 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header {
+  padding: 1rem;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+#main-section {
+  flex: 1;
+  padding: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#link-section {
+  margin-bottom: 5rem;
+
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+}
+
+#link-section div {
+  font-size: 20px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+#link-section div::after {
+  content: "";
+
+  height: 3px;
+  width: 0%;
+
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+
+  background: linear-gradient(to right, blue, purple);
+
+  transition: width 200ms;
+}
+
+#link-section div:hover::after {
+  width: 100%;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid black;
+  border-radius: 10px;
+
+  width: 20rem;
+  height: 20rem;
+
+  position: relative;
+
+  background-color: white;
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.box::after,
+.box::before {
+  content: "";
+
+  width: 20rem;
+  height: 20rem;
+  padding: 2px;
+
+  background: conic-gradient(from var(--angle), red, yellow, green, blue, red);
+  /* background: conic-gradient(from var(--angle), transparent 50%, blue); */
+  border-radius: 10px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+  z-index: -1;
+
+  animation: spin 2s linear infinite;
+}
+
+.box::before {
+  filter: blur(10px);
+}
+
+.box-title {
+  padding: 0.5rem 0;
+
+  font-size: 20px;
+  text-align: center;
+  font-weight: 600;
+
+  border-bottom: 1px solid black;
+}
+
+.box-content {
+  padding: 5px;
+  height: 100%;
+
+  font-size: 20px;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ANIMATIONS */
+@keyframes spin {
+  from {
+    --angle: 0deg;
+  }
+
+  to {
+    --angle: 360deg;
+  }
+}
