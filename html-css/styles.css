@@ -63,6 +63,18 @@ body {
   width: 100%;
 }
 
+#box-section {
+  display: flex;
+  gap: 3rem;
+}
+
+/* MEDIA QUERIES FOR THE BOX SECTION */
+@media (max-width: 720px) {
+  #box-section {
+    flex-direction: column;
+  }
+}
+
 .box {
   display: flex;
   flex-direction: column;
@@ -70,7 +82,7 @@ body {
   border: 1px solid black;
   border-radius: 10px;
 
-  width: 20rem;
+  max-width: 20rem;
   height: 20rem;
 
   position: relative;
@@ -93,7 +105,6 @@ body {
   padding: 2px;
 
   background: conic-gradient(from var(--angle), red, yellow, green, blue, red);
-  /* background: conic-gradient(from var(--angle), transparent 50%, blue); */
   border-radius: 10px;
 
   position: absolute;
@@ -108,6 +119,11 @@ body {
 
 .box::before {
   filter: blur(10px);
+}
+
+.box-blue::after,
+.box-blue::before {
+  background: conic-gradient(from var(--angle), transparent 50%, blue);
 }
 
 .box-title {
