@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow-x: hidden;
+}
+
+header {
+  padding: 1rem 0;
+
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  /* use justify-item or align-item when you want to position all the items inside the grid at once */
+  align-items: center;
+  justify-items: center;
+
+  border-bottom: 1px solid black;
+}
+
+@media (max-width: 780px) {
+  header {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 1rem;
+  }
+
+  header::before {
+    display: none;
+  }
+}
+
+@media (max-width: 440px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  header nav a {
+    font-size: 16px !important;
+  }
+}
+
+/* header nav {
+    align-self: center;
+    justify-self: center;
+} */
+
+header::before {
+  content: "";
+}
+
+header nav {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+header nav a {
+  text-decoration: none;
+
+  color: black;
+  font-size: 18px;
+  font-weight: 600;
+
+  position: relative;
+}
+
+header nav a::after {
+  content: "";
+
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(to right, blue, red);
+
+  position: absolute;
+  bottom: 0%;
+  left: 0%;
+
+  transition: width 200ms;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+main {
+  padding: 2rem 1rem;
+
+  border-bottom: 1px solid black;
+}
+
+@media (max-width: 400px) {
+  main {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+#phone-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  grid-gap: 1rem 3rem;
+  justify-content: center;
+}
+
+.phone-card {
+  width: 100%;
+  height: 100%;
+
+  border: 2px solid red;
+  padding: 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.phone-card img {
+  height: 300px;
+  width: 100%;
+  object-fit: contain;
+
+  transition: transform 200ms ease;
+}
+
+.phone-card img:hover {
+  transform: scale(1.05);
+}
+
+.phone-card .card-content {
+  margin: 1.2rem 0;
+
+  max-width: 250px;
+}
+
+.phone-card .card-footer {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: space-evenly;
+  align-items: center;
+
+  width: 100%;
+}
+
+.phone-card .card-footer p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+footer {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+
+  padding: 2rem 0;
+}
