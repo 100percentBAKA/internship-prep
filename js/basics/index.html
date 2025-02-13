@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS Dom Manipulation</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="index.js" defer></script>
+    <!-- defer will ensure that the .js file is loaded only after the html (skeleton) is loaded -->
+  </head>
+  <body>
+    <header>
+      <h1 class="header-title">Welcome to DOM manipulation !</h1>
+      <button onclick="changeTitle()">click to change heading</button>
+    </header>
+
+    <main>
+      <section id="image-section">
+        <img src="https://placehold.co/400" />
+
+        <div class="btn-ctn">
+          <button onclick="changeImg()">Change Image</button>
+          <button onclick="toggleTheme()">Toggle Theme</button>
+        </div>
+      </section>
+
+      <section id="list-section">
+        <input type="text" id="input-list" placeholder="enter input items" />
+        <button onclick="createList()">create</button>
+        <ul id="list-ul"></ul>
+      </section>
+    </main>
+
+    <nav></nav>
+  </body>
+</html>

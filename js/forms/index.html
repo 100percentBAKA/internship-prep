@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <script src="index.js" defer></script>
+
+    <!-- defer ensures that the script.js loads after the .html file loads -->
+  </head>
+  <body>
+    <header>
+      <h1 class="header-title">This is the Header</h1>
+
+      <div>
+        do you have any issues with the header ? change it using the input field
+      </div>
+
+      <input
+        type="text"
+        id="input-heading"
+        placeholder="enter the new header here"
+        oninput="changeHeader()"
+      />
+    </header>
+
+    <main>
+      <section id="form-section">
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-ele">
+            <label for="input-name">Enter your name: </label>
+            <input type="text" id="input-name" placeholder="Name . . ." />
+          </div>
+
+          <div class="form-ele">
+            <label for="input-age">Enter your age: </label>
+            <input type="number" id="input-age" placeholder="Age . . ." />
+          </div>
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <section id="display-section"></section>
+    </main>
+  </body>
+</html>
