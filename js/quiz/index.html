@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz App</title>
+
+    <link rel="stylesheet" href="styles.css" type="text/css" />
+
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="overlay hidden"></div>
+    <div class="spinner hidden"></div>
+
+    <header>
+      <button onclick="startQuiz()">Start</button>
+      <h1>This is a quiz app</h1>
+
+      <div class="score-ctn">
+        <div class="highscore"></div>
+        <div class="currentscore"></div>
+      </div>
+    </header>
+
+    <main>
+      <section id="diff-section"></section>
+
+      <section id="question-section"></section>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
