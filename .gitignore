@@ -1,3 +1,4 @@
 node_modules/
 dist/
 demo/src/main/resources/application.properties
+spring/demo/src/main/resources/application.properties
