@@ -1,6 +1,5 @@
 package com.adarshgs.demo.dtos;
 
-import com.adarshgs.demo.entities.Publisher;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

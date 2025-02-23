@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.adarshgs.demo.dtos.BindingErrorResponse;
 
-import javax.xml.crypto.Data;
-
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     
