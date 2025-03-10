@@ -1,0 +1,12 @@
+.product-container {
+  padding: 5rem;
+
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+
+  justify-content: center;
+
+  gap: 3rem;
+}

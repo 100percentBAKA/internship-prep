@@ -1,0 +1,23 @@
+<div class="product-card-ctn">
+  <div
+    class="stock-ctn"
+    *ngIf="productInfo.stock && productInfo.stock > 0; else outOfStock"
+  >
+    {{ productInfo.stock }} left
+  </div>
+
+  <ng-template #outOfStock>
+    <span class="out-of-stock">Out of Stock</span>
+  </ng-template>
+
+  <div class="img-ctn">
+    <img src="{{ productInfo.image }}" alt="{{ productInfo.title }}" />
+  </div>
+
+  <div class="content-ctn">
+    <div class="content-title">{{ productInfo.title }}</div>
+    <div class="content-price">${{ productInfo.price }}</div>
+
+    <app-primary-button [buttonLabel]="'Add to Cart'"></app-primary-button>
+  </div>
+</div>

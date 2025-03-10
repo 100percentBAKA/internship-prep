@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 1rem;
+
+  border-bottom: 1px solid black;
+}
+
+header span {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.bg-green {
+  background-color: green !important;
+}
